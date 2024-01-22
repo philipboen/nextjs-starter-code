@@ -1,0 +1,79 @@
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,301,701,300,501,401,901,400,2&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("../styles/theme.css");
+@import url("../styles/typography.css");
+
+@layer base {
+  :root {
+    --font-satoshi: "Satoshi", ui-sans-serif, system-ui, -apple-system,
+      "Segoe UI", sans-serif;
+    font-variant-numeric: lining-nums tabular-nums;
+    font-feature-settings:
+      "ss03" on,
+      "liga" off;
+  }
+}
+
+@layer utilities {
+  .max-container {
+    @apply mx-auto max-w-[1600px]; /* 1600px | 1440px */
+  }
+
+  .flexStart {
+    @apply flex justify-start items-center;
+  }
+
+  .flexBetween {
+    @apply flex justify-between items-center;
+  }
+
+  .flexCenter {
+    @apply flex justify-center  items-center;
+  }
+
+  .flexEnd {
+    @apply flex justify-end items-center;
+  }
+
+  .no-focus {
+    @apply focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
+  }
+
+  .main-scrollbar::-webkit-scrollbar {
+    @apply w-10 h-3;
+  }
+
+  .main-scrollbar::-webkit-scrollbar-track {
+    @apply bg-[hsl(0,0%,80%)] dark:bg-[#424242];
+  }
+
+  .main-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-[#888] dark:bg-[#686868];
+  }
+
+  .main-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-[#686868] dark:bg-[hsl(0,0%,51%)];
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 50px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
